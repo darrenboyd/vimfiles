@@ -1,5 +1,6 @@
 ""
 "" Thanks:
+""   Mislav Marohnić <mislav.uniqpath.com>
 ""   Gary Bernhardt  <destroyallsoftware.com>
 ""   Drew Neil  <vimcasts.org>
 ""   Tim Pope  <tbaggery.com>
