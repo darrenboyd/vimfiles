@@ -187,6 +187,31 @@ nnoremap <leader>d :GdiffInTab<cr>
 nnoremap <leader>D :tabclose<cr>
 
 command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+command! ConvertHash :normal %s/:\([^ ]*\)\(\s*\)=>/\1:/g
+command! TabsTo2Spaces :normal %s/\t/  /g
+
+if exists(":Tabularize")
+
+  AddTabularPattern => /^[^=>]*\zs=>
+
+  nmap <Leader>a{ :Tabularize /{<CR>
+  vmap <Leader>a{ :Tabularize /{<CR>
+  nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+  vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+  nmap <Leader>a> :Tabularize /^[^=>]*\zs=><CR>
+  vmap <Leader>a> :Tabularize /^[^=>]*\zs=><CR>
+  nmap <Leader>a: :Tabularize /:<CR>
+  vmap <Leader>a: :Tabularize /:<CR>
+  nmap <Leader>a:: :Tabularize /:\zs<CR>
+  vmap <Leader>a:: :Tabularize /:\zs<CR>
+  nmap <Leader>a, :Tabularize /,<CR>
+  vmap <Leader>a, :Tabularize /,<CR>
+  nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+  vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+
+  vmap <Leader>ah :Tabularize/^[^:]*\zs:/l0l1<CR>
+  vmap <Leader>ahh :Tabularize/^[^:]*\zs:/r0l1l0<CR>
+endif
 
 " populate arglist with files from the quickfix list
 command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
