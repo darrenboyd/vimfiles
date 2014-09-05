@@ -150,9 +150,8 @@ map <leader>gt :CommandTTag<cr>
 map <leader>f :CommandT<cr>
 map <leader>F :CommandT %%<cr>
 
-let g:CommandTMatchWindowAtTop=1
-let g:CommandTMaxHeight=10
-let g:CommandTMinHeight=2
+let g:CommandTMaxHeight=12
+let g:CommandTMinHeight=4
 
 let g:turbux_command_test_unit = 'ruby -Ilib:test'
 " let g:turbux_command_cucumber = 'cucumber -f progress'
