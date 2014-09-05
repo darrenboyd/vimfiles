@@ -1,9 +1,12 @@
-set guifont=Menlo\ Regular:h14
+set guifont=Menlo\ Regular:h16
 set linespace=2
 set antialias
 
 " Don't beep
 set visualbell
+
+set background=light
+color solarized
 
 set guioptions-=T   " No toolbar
 set guioptions-=r   " No scrollbars
