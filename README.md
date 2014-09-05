@@ -1,5 +1,9 @@
-Mislav's vim configuration
+Darren's vim configuration
 ==========================
+
+This is forked from [Mislav's vim configuration](https://github.com/mislav/vimfiles).
+Huge props for all the work done before I arrived.
+
 
 Thanks to these guys:
 
