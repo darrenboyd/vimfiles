@@ -46,6 +46,20 @@ files inside the ".vim" directory.
 
 ### File switching (Command-T)
 
+__Beware of Command-T compilation on OS-X__
+
+It is important that Command-T, vim and MacVim (if you are using it) are all
+compiled against the same Ruby.  I use HomeBrew RVM, so this was easy to do on
+OS-X 10.9.4 by doing the following...
+
+  # rvm uninstall macvim
+  # rvm system do brew install macvim
+  # ln -s /usr/local/bin/mvim ~/bin/vim  # adjust to your tastes
+  # cd ~/.vim/bundle/command-t/ruby/command-t/
+  # make clean
+  # rvm system do ruby extconf.rb
+  # rvm system do make
+
 * `,,` alternates between two most recent buffers
 * `,f` - jump to file:
   * `,F` - search in directory of current buffer
