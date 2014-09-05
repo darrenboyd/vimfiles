@@ -135,6 +135,7 @@ let mapleader=","
 
 " yank to system clipboard
 map <leader>y "*y
+map <leader>v "*p
 
 " paste lines from unnamed register and fix indentation
 nmap <leader>p pV`]=
