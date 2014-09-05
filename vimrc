@@ -203,12 +203,6 @@ endfunction
 set splitright
 set splitbelow
 
-" disable cursor keys in normal mode
-map <Left>  :echo "no!"<cr>
-map <Right> :echo "no!"<cr>
-map <Up>    :echo "no!"<cr>
-map <Down>  :echo "no!"<cr>
-
 if has("statusline") && !&cp
   set laststatus=2                   " always show the status bar
   set statusline=%<%1*\ %f\ %*       " filename
