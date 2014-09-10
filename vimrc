@@ -21,7 +21,8 @@ set background=dark
 color railscasts
 set synmaxcol=800           " don't try to highlight long lines
 
-set nonumber    " line numbers aren't needed
+" set nonumber    " line numbers aren't needed
+set number      " line numbers are needed
 set ruler       " show the cursor position all the time
 set cursorline  " highlight the line of the cursor
 set showcmd     " show partial commands below the status line
