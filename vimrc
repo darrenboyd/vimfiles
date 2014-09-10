@@ -179,6 +179,9 @@ set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
 " ignore Bundler standalone/vendor installs & gems
 set wildignore+=bundle/**,vendor/bundle/**,vendor/cache/**,vendor/gems/**
 set wildignore+=node_modules/**
+" ignore things in Rails projects
+set wildignore+=*.eot,*.ttf,*.woff
+set wildignore+=*.png,*.jpg,*.jpeg,*.ico,*.gif
 
 " toggle between last open buffers
 nnoremap <leader><leader> <c-^>
