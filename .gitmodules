@@ -79,3 +79,9 @@
 [submodule "bundle/argumentative"]
 	path = bundle/argumentative
 	url = https://github.com/PeterRincker/vim-argumentative
+[submodule "bundle/elixir"]
+	path = bundle/elixir
+	url = git@github.com:elixir-lang/vim-elixir.git
+[submodule "bundle/airline"]
+	path = bundle/airline
+	url = git@github.com:bling/vim-airline.git
