@@ -121,6 +121,7 @@ augroup vimrcEx
   au BufLeave *.{css,scss,sass} exe "normal! mS"
   au BufLeave *.{js,coffee}     exe "normal! mJ"
   au BufLeave *.{rb}            exe "normal! mC"
+
 augroup END
 
 " don't use Ex mode, use Q for formatting
@@ -182,6 +183,8 @@ set wildignore+=node_modules/**
 " ignore things in Rails projects
 set wildignore+=*.eot,*.ttf,*.woff
 set wildignore+=*.png,*.jpg,*.jpeg,*.ico,*.gif
+" ignore crazy shit
+set wildignore+=*.mp3
 
 " toggle between last open buffers
 nnoremap <leader><leader> <c-^>
@@ -190,32 +193,7 @@ command! GdiffInTab tabedit %|vsplit|Gdiff
 nnoremap <leader>d :GdiffInTab<cr>
 nnoremap <leader>D :tabclose<cr>
 
-command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
 command! ConvertHash :normal %s/:\([^ ]*\)\(\s*\)=>/\1:/g
-command! TabsTo2Spaces :normal %s/\t/  /g
-
-if exists(":Tabularize")
-
-  AddTabularPattern => /^[^=>]*\zs=>
-
-  nmap <Leader>a{ :Tabularize /{<CR>
-  vmap <Leader>a{ :Tabularize /{<CR>
-  nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-  vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-  nmap <Leader>a> :Tabularize /^[^=>]*\zs=><CR>
-  vmap <Leader>a> :Tabularize /^[^=>]*\zs=><CR>
-  nmap <Leader>a: :Tabularize /:<CR>
-  vmap <Leader>a: :Tabularize /:<CR>
-  nmap <Leader>a:: :Tabularize /:\zs<CR>
-  vmap <Leader>a:: :Tabularize /:\zs<CR>
-  nmap <Leader>a, :Tabularize /,<CR>
-  vmap <Leader>a, :Tabularize /,<CR>
-  nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-  vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
-  vmap <Leader>ah :Tabularize/^[^:]*\zs:/l0l1<CR>
-  vmap <Leader>ahh :Tabularize/^[^:]*\zs:/r0l1l0<CR>
-endif
 
 " Typical command-# tab navigation
 " From: https://superuser.com/questions/382060/shortcut-to-switch-tabs-in-macvim
@@ -289,6 +267,32 @@ function MoveToNextTab()
   "opening current buffer in new window
   exe "b".l:cur_buf
 endfunc
+
+function InitializePlugins()
+
+  AddTabularPattern => /^[^=>]*\zs=>
+
+  nmap <Leader>a{ :Tabularize /{<CR>
+  vmap <Leader>a{ :Tabularize /{<CR>
+  nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+  vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+  nmap <Leader>a> :Tabularize /^[^=>]*\zs=><CR>
+  vmap <Leader>a> :Tabularize /^[^=>]*\zs=><CR>
+  nmap <Leader>a: :Tabularize /:<CR>
+  vmap <Leader>a: :Tabularize /:<CR>
+  nmap <Leader>a:: :Tabularize /:\zs<CR>
+  vmap <Leader>a:: :Tabularize /:\zs<CR>
+  nmap <Leader>a, :Tabularize /,<CR>
+  vmap <Leader>a, :Tabularize /,<CR>
+  nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+  vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+
+  vmap <Leader>ah :Tabularize/^[^:]*\zs:/l0l1<CR>
+  vmap <Leader>ahh :Tabularize/^[^:]*\zs:/r0l1l0<CR>
+
+endfunction
+
+autocmd VimEnter * call InitializePlugins()
 
 set laststatus=2                   " always show the status bar
 
