@@ -193,8 +193,6 @@ command! GdiffInTab tabedit %|vsplit|Gdiff
 nnoremap <leader>d :GdiffInTab<cr>
 nnoremap <leader>D :tabclose<cr>
 
-command! ConvertHash :normal %s/:\([^ ]*\)\(\s*\)=>/\1:/g
-
 " Typical command-# tab navigation
 " From: https://superuser.com/questions/382060/shortcut-to-switch-tabs-in-macvim
 " Meta+1-0 jumps to tab 1-10
