@@ -122,6 +122,11 @@ augroup vimrcEx
   au BufLeave *.{js,coffee}     exe "normal! mJ"
   au BufLeave *.{rb}            exe "normal! mC"
 
+  " http://www.stefanwienert.de/blog/2012/02/29/vim-sane-and-fast-auto-completion-with-ctags/
+  " http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
+  au InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+  au InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
 augroup END
 
 " don't use Ex mode, use Q for formatting
@@ -151,6 +156,16 @@ map <leader>gl :CommandT lib<cr>
 map <leader>gt :CommandTTag<cr>
 map <leader>f :CommandT<cr>
 map <leader>F :CommandT %%<cr>
+
+" ,rt -> regenerate tags, including objects/functions from installed gems
+" http://effectif.com/vim/using-ctags-with-bundler-gems
+map <leader>rt :!ctags -f .tags --extra=+f --languages=-javascript --exclude=.git --exclude=db/migrate --exclude=log -R *<CR><C-M>
+
+" set tags-lookup-path
+set tags=.tags;/
+
+" do not regard "-" as word seperator (css Files!)
+set iskeyword+=-
 
 let g:CommandTMaxHeight=12
 let g:CommandTMinHeight=4
