@@ -285,6 +285,8 @@ function InitializePlugins()
 
   AddTabularPattern => /^[^=>]*\zs=>
 
+  nmap <Leader>at :Tabularize /\.to\zs/<CR>
+  vmap <Leader>at :Tabularize /\.to\zs/<CR>
   nmap <Leader>a{ :Tabularize /{<CR>
   vmap <Leader>a{ :Tabularize /{<CR>
   nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
