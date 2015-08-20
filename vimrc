@@ -222,6 +222,8 @@ while (s:windowmapnr < strlen(s:wins))
 endwhile
 unlet s:windowmapnr s:wins
 
+" Make F5 list all buffers and prepare to switch buffer
+nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " populate arglist with files from the quickfix list
 command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
