@@ -152,10 +152,13 @@ nmap <leader>P PV`]=
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-map <leader>gl :CommandT lib<cr>
-map <leader>gt :CommandTTag<cr>
-map <leader>f :CommandT<cr>
-map <leader>F :CommandT %%<cr>
+" map <leader>gl :CommandT lib<cr>
+" map <leader>gt :CommandTTag<cr>
+" map <leader>f :CommandT<cr>
+" map <leader>F :CommandT %%<cr>
+
+map <leader>f :CtrlP<cr>
+map <leader>F :CtrlP %%<cr>
 
 " ,rt -> regenerate tags, including objects/functions from installed gems
 " http://effectif.com/vim/using-ctags-with-bundler-gems
@@ -167,8 +170,8 @@ set tags=.tags;/
 " do not regard "-" as word seperator (css Files!)
 set iskeyword+=-
 
-let g:CommandTMaxHeight=12
-let g:CommandTMinHeight=4
+" let g:CommandTMaxHeight=12
+" let g:CommandTMinHeight=4
 
 let g:turbux_command_test_unit = 'ruby -Ilib:test'
 " let g:turbux_command_cucumber = 'cucumber -f progress'
