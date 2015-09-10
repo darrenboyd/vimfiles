@@ -152,13 +152,11 @@ nmap <leader>P PV`]=
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-" map <leader>gl :CommandT lib<cr>
-" map <leader>gt :CommandTTag<cr>
-" map <leader>f :CommandT<cr>
-" map <leader>F :CommandT %%<cr>
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %%<cr>
+map <leader>b :CtrlPBuffer<cr>
 
 " ,rt -> regenerate tags, including objects/functions from installed gems
 " http://effectif.com/vim/using-ctags-with-bundler-gems
