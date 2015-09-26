@@ -1,4 +1,4 @@
-set guifont=Ubuntu\ Mono
+set guifont=Ubuntu\ Mono\ 11
 set linespace=2
 set antialias
 
@@ -10,6 +10,7 @@ color solarized
 
 set guioptions-=T   " No toolbar
 set guioptions-=r   " No scrollbars
+set guioptions-=L   " No scrollbars
 
 set noballooneval
 set balloonexpr=""
