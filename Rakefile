@@ -1,4 +1,4 @@
-task :default => [:update, :link, :command_t]
+task :default => [:update, :link ]
 
 desc %(Bring bundles up to date)
 task :update do
