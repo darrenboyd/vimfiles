@@ -141,12 +141,10 @@ map Q gq
 let mapleader=","
 
 " yank to system clipboard
-map <leader>y "*y
-map <leader>v "*p
-
-" paste lines from unnamed register and fix indentation
-nmap <leader>p pV`]=
-nmap <leader>P PV`]=
+map <leader>y "+y
+map <leader>p "+gP
+map <leader>Y "*y
+map <leader>P "*gP
 
 " expand %% to current directory in command-line mode
 " http://vimcasts.org/e/14
